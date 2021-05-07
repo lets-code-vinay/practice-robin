@@ -1,0 +1,62 @@
+*{
+    margin: 0; padding: 0; box-sizing: border-box;
+    color: white;
+    font-family: 'Bree Serif', serif;
+
+    font-family: 'Fredoka One', cursive;
+
+    font-family: 'Lobster', cursive;
+
+    font-family: 'Satisfy', cursive;
+}
+body{
+    background-color: #7f5a83;
+    background-image: url('./fox.jpeg');
+    border: 10px solid grey;
+    height: 100vh;
+}
+h1{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.about{
+    position: relative;
+    width: fit-content;
+    height: 300px;
+    border: 1px solid white;
+    display: flex;
+    background-image: linear-gradient(315deg, #e7eff98c 0%, #0c39a180 74%);
+    margin: 1%;
+    border-radius: 5px;
+}
+.myData{
+    float: left;
+    width: 70%;
+    height: 200px;
+    
+    margin: 2%;
+    margin-right: 20px;
+}
+ .myImage{
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    right: 2%;
+    margin: 2%;
+    border: 2px solid white;
+    border-radius: 50%;
+    float: right;
+}
+
+ul{
+    margin: 1%;
+    background-color: none;
+    list-style-type: none;   
+}
+.icons{
+    width: 20px;
+    height: 20px;
+}

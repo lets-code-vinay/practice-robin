@@ -1,0 +1,11 @@
+Create an CRUD login application using express generator.
+Params
+Username
+Email
+Passoword
+User can login using
+Username and password
+If successful -- send out as Login Success else the error.
+User can update any of the above params.
+User can update and delete.
+To validate all api endpoint use postman.

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nova+Square&display=swap" rel="stylesheet">
+    <title>StopWatch</title>
+</head>
+
+<body>
+
+    <div class="mainbody">
+        <div class="backgroundImage">
+            <img src="./Screenshot_2.png" id="watch">
+            <div class="screen" id="screen">
+                <div class="timerBox" id="timerBox">
+                    <div id="timer">
+                        <p id="timerTick"><b > 00:00:00:00 </b></p>
+                        </div>
+                </div>
+    
+                <div class="indicationBox">
+                    <div class="indicator">
+                        <p id="indi"><b>Hr :Min: Sec : Ms </b></p> 
+                    </div>
+                </div>
+    
+                <div class="buttonBox">
+                    <button id="resetI" class="resetC" onclick="reset()"><p id="reset">RESET</p> </button>
+                    <button id="startPause" class="startC" onclick="start()"><p id="start">START</p> </button>
+                    <button id="stopI" class="stopC" onclick="pause()">  <p id="stopKey"> STOP</p></button>
+                </div>
+            </div>                    
+        </div>
+    </div>    
+ <!-----------Scripting of Stop watch---------->  
+ <script>
+     var time = 0;
+     var running = 0;
+
+     function start(){
+         if(running == 0){
+            running = 1;
+            increment();
+
+            document.getElementById('start').innerHTML = 'Start';
+            document.getElementById('startPause').style.transform = 'scale(0.8)';
+            document.getElementById('startPause').style.backgroundImage = 'linear-gradient(to right, #27302a, #C0C0C0, #27302a)';
+            document.getElementById('startPause').style.boxShadow = '0px 0px 10px 5px white'
+
+            
+            document.getElementById('stopI').style.backgroundImage = 'linear-gradient(to right, #B9ABCF, #5B6467)';            
+            document.getElementById('stopI').style.transform = 'scale(1)';
+            document.getElementById('stopI').style.boxShadow = '0px 0px 0px 0px white'
+
+            document.getElementById('stopKey').innerHTML = 'PAUSE';
+            document.getElementById('reset').innerHTML = 'RESET';
+
+            document.getElementById('resetI').style.transform = 'scale(1)';
+            document.getElementById('resetI').style.boxShadow = '0px 0px 0px 0px white'
+         
+            document.getElementById('timerBox').style.backgroundColor = '#C0C0C0'
+            
+            
+         }
+     }
+        function pause(){
+             running = 0;
+            document.getElementById('start').innerHTML = 'START'
+            document.getElementById('stopKey').innerText = 'Pause'
+            
+            document.getElementById('stopI').style.transform = 'scale(0.8)';
+            document.getElementById('stopI').style.backgroundImage = 'linear-gradient(to right, #27302a, #C0C0C0, #27302a)';
+            document.getElementById('stopI').style.boxShadow = '0px 0px 10px 5px white'
+
+            document.getElementById('startPause').style.transform = 'scale(1)';
+            document.getElementById('startPause').style.backgroundImage = 'linear-gradient(to right, #2F4353, #B9ABCF)';
+            document.getElementById('startPause').style.boxShadow = '0px 0px 0px 0px white'
+
+            document.getElementById('resetI').style.transform = 'scale(1)';
+            document.getElementById('resetI').style.boxShadow = '0px 0px 0px 0px white'
+         }
+     
+
+     function reset(){
+         running = 0;
+         time = 0;
+         document.getElementById('timerTick').innerHTML = '00:00:00:00'
+         document.getElementById('reset').innerHTML = 'Reset';
+         document.getElementById('resetI').style.transform = 'scale(0.8)';
+         document.getElementById('resetI').style.backgroundImage = 'linear-gradient(to right, #27302a, #C0C0C0, #27302a)';
+         document.getElementById('resetI').style.boxShadow = '0px 0px 10px 5px white'
+         
+         
+         document.getElementById('start').innerHTML = 'START';
+         document.getElementById('stopKey').innerHTML = 'PAUSE';
+         document.getElementById('startPause').style.boxShadow = '0px 0px 0px 0px white'
+     
+
+         document.getElementById('startPause').style.transform = 'scale(1)';
+         document.getElementById('startPause').style.backgroundImage = 'linear-gradient(to right, #2F4353, #B9ABCF)';
+         document.getElementById('stopI').style.boxShadow = '0px 0px 0px 0px white'
+
+                    
+     }
+
+     function increment(){
+         if(running == 1){
+             time++;
+             setTimeout(function (){
+                var tenth = time % 10;
+                var secs = Math.floor(time/10 % 60);
+                var mins = Math.floor(time/10/60);
+                var hours = Math.floor(time/10/60/60);
+
+                if(mins < 10){
+                    mins = "0" + mins;
+                }
+                if(secs < 10 ){
+                    secs = "0" + secs;
+                }
+                if(hours < 10){
+                    hours = "0" + hours;
+                }
+
+                if(running > 0){
+                    document.getElementById('timerTick').style.color = "black";
+                    document.getElementById('indi').style.color = "#e3ddec"
+                    document.getElementById('screen').style.boxShadow = "0px 0px 10px 10px white";
+                    document.getElementById('timerBox').style.boxShadow = "0px 0px 2px 2px white";      
+                    document.getElementById('screen').style.backgroundColor = "#282a2b";
+                    
+                }
+
+                document.getElementById('timerTick').innerHTML = hours + ":" + mins + ":" + secs + ":" + tenth + "0";
+                increment();
+             }, 100)
+         }
+     }
+
+ </script>
+ <!-------------Script Ends-------------------->
+</body>
+</html>

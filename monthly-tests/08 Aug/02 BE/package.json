@@ -1,0 +1,30 @@
+{
+  "name": "test-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./api/app.js",
+  "scripts": {
+    "test": "nodemon --exec babel-node api/server",
+    "start": "npm run build && node dist/server",
+    "build": "rimraf dist/ && babel api/ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files"
+  },
+  "author": "vinay",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.6.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.2",
+    "rimraf": "^2.7.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.4",
+    "@babel/node": "^7.10.5",
+    "@babel/plugin-transform-runtime": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "morgan": "^1.10.0"
+  }
+}

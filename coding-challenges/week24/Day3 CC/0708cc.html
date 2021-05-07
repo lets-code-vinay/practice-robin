@@ -1,0 +1,87 @@
+<!--
+    
+Have a go at creating a new webpage that displays a form with the fields in the image.
+https://res.cloudinary.com/dee15mycp/image/upload/v1594187279/Html_form_style_w5nkmj.png
+•Note that “fieldsets”are being used to group the form fields.
+•Since we may not yet know how to process the information on a form, for the moment just use the form attribute action="mailto:my@emailaddy.com" 
+to send yourself an email (modify with your own address).
+•As always, ensure that your page validates!•Once you have your form displaying, 
+we'll take it one step further by adding some accessibility:oIdentify all the labels for your fields using the <label> element.
+    oAdd access keys for your fields and test them!
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="0708cc.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place My order</title>
+</head>
+<body>
+    <div class="mainBody">
+        <form method="POST" action="#">
+
+<!------------------------------------------------------------------>
+<fieldset>
+    <legend id="legend">Purchases</legend>   
+    <div id="divId" class="purchases">    
+            <label >Product Name:</label><br>
+            <select>
+                <option>Table</option>
+                <option>Chairs</option>
+                <option>Notebooks</option>
+                <option>Careers</option>
+                <option>Salt</option>
+            </select><br>
+            <label>Quantity:</label><br>
+            <input type="number" placeholder="Enter quantity in numbers">
+        </div>
+    </fieldset><br>
+<!-------------------------------------------------------------------->
+<fieldset>
+    <legend id="legend">Personal Details</legend>   
+        <div class="personalDetails1" id="divId">
+            <label >First Name:</label><br>
+            <input type="text" placeholder="Enter your first name">
+            <br>
+            <label >Last Name:</label><br>
+            <input type="text" placeholder="Enter your last name">
+            <br>
+        </div>
+    </fieldset><br>
+<!-------------------------------------------------------------------->
+<fieldset>
+    <legend id="legend">Credit Card Details</legend>
+        <div class="creditCardDetails" id="divId">
+            <label for="creditcard">Credit Card Type:</label><br>
+            <input class="notReq"    type="radio" name= creditcard>Visa</input><br>
+            <input class="notReq" type="radio" name= creditcard>Master Card</input><br>
+            
+            <label> Credit Card Number</label><br>
+            <input type="number" placeholder="0000 0000 0000 0000"></input><br>
+            
+            <label type="text" >Expiry Date:</label><br>
+            <input class="notReq" type="number" placeholder="MM/YY"></input>
+            
+        </div>
+    </fieldset><br>
+<!------------------------------------------------------------------------>    
+<fieldset>
+    <legend id="legend">Billing Information</legend>
+        <div class="biillingAddress" id="divId">
+            <label for="postalAddress">Postal Address:</label><br>
+            <textarea type="text" placeholder="Provide Your Address here"></textarea>
+        <br>
+            <label for="homeAddress">Home Address:</label> 
+            <input  class="notReq"  type="checkbox"><span>Same as above</span><br>
+            <textarea type="text" placeholder="Provide Your Address here"></textarea>
+        </div>
+    </fieldset><br>
+<!---------------------------------------------------------------------->    
+        <input class="button notReq" type="submit" value="Place my order"> </input>
+</form>
+    </div>
+</body>
+</html>

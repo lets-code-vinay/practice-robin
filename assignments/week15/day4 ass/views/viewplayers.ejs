@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> <%= title %> </title>
+</head>
+<body>
+<form method="POST"> 
+    <h2> <%- include('header')-%> </h2>
+    <h1> <%= title %> </h1><hr>
+    <table style="width: 80%; border: 2px solid black; background-color: cornsilk;">
+        <thead style="background-color: burlywood;">
+             <tr >
+                <th> Name </th>
+                
+                <th> Country </th>
+       </tr>
+     </thead>
+ 
+     <% player.forEach(function(row){ %>
+                <tr> 
+            
+            <td> <a href="/player"><%= row.name %></a>  </td>
+            <td>  <%= row.country  %> </td> 
+            <td> <a href="/player">Show Details </a></td> 
+</tr> <br>
+<% }) %>
+</table> 
+</form>
+</body>
+</html>

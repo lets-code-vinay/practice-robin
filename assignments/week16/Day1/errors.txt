@@ -1,0 +1,4 @@
+1. (node:1318) UnhandledPromiseRejectionWarning: Must supply api_key
+    solve:-  there was no files in uploads folder to upload
+2. TypeError: files is not iterable
+    solve:-

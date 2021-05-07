@@ -1,0 +1,31 @@
+<%- include('headers'); -%>
+<form method="post">
+    <table>
+        <tr>
+            <td> User Id :</td>
+            <td> 
+                <input type="text" placeholder="Enter UserId" name="userId" >
+            </td>
+        </tr><br>
+        <tr>
+            <td>Id</td>
+            <td>
+                <input type="text" placeholder="Enter id (optional)" name="id" > 
+            </td>
+        </tr><br>
+        <tr>
+            <td> title</td>
+            <td>
+                <input type="text" placeholder="Enter title" name="title" required> 
+            </td>
+        </tr><br>
+        <tr>
+            <td>Body</td>
+            <td> 
+                <input type="text" placeholder="Enter the body" name="body" required>
+            </td>
+        </tr>
+    </table><br>
+    <input type="submit">
+    <input type="button" value="Display" onclick="window.location='display'"> 
+</form>

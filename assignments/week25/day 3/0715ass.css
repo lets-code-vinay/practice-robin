@@ -1,0 +1,68 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box; }
+
+body {
+  background-image: url(./2110.jpg);
+  width: 100vw;
+  height: 100vh; }
+
+.mainbody {
+  width: 100%;
+  height: 100%; }
+  .mainbody #navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 99; }
+  .mainbody .about {
+    margin-top: 40px;
+    position: relative; }
+    .mainbody .about .topCrousel {
+      width: 100%;
+      height: 100%;
+      background-color: rgba(23, 19, 49, 0.384);
+      padding: 20px; }
+      .mainbody .about .topCrousel .carousel-item {
+        width: 30%;
+        height: 30%;
+        margin-left: 30%;
+        border: 2% solid rgba(107, 46, 46, 0.514);
+        border-radius: 5%;
+        box-shadow: 1px 2px 2px 2px white; }
+    .mainbody .about .jumboFlex {
+      display: inline;
+      display: flex;
+      margin: 0;
+      padding: 10px;
+      background-color: rgba(178, 187, 93, 0.082);
+      color: white; }
+      .mainbody .about .jumboFlex .jumbotron {
+        position: relative;
+        width: 110vh;
+        height: 110%;
+        padding: 0;
+        margin: 0;
+        background-color: rgba(178, 187, 93, 0);
+        color: white;
+        border: none; }
+      .mainbody .about .jumboFlex #introImage {
+        position: absolute;
+        width: 35%;
+        height: 50%;
+        right: 20px;
+        text-align: center;
+        border: 2% solid rgba(107, 46, 46, 0.514);
+        border-radius: 5%;
+        box-shadow: 1px 2px 2px 2px white; }
+    .mainbody .about .footer {
+      position: absolute;
+      height: 100px;
+      width: 100vw;
+      background-color: #54693e;
+      margin-top: 30%; }
+      .mainbody .about .footer p {
+        text-align: center;
+        color: lawngreen;
+        top: 10px; }

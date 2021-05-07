@@ -1,0 +1,2 @@
+Make a stopwatch with the help of JavaScriptand HTML.
+There should be a button to startand a button to stopthe stopwatch.

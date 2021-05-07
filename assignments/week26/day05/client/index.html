@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link 
+    rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+    crossorigin="anonymous"
+    >
+    <style>
+        .page{
+            display: grid;
+            place-items: center;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .page-login-box{
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            height: 400px;
+            width: 400px;
+            box-shadow: gray 5px 0 20px;
+            text-align: center;
+        }
+
+
+        .header, .footer{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .user-input{
+            display: grid;
+            grid-template-rows: auto;
+            align-self: center;
+        }
+
+        .form-error, .invalid{
+            text-align: left;
+            font-family: monospace;
+            color: red;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid page">
+        <div class="page-login-box">
+            <div class="heading">
+                <h3 class="display-4">LogIn</h3>
+                <hr>
+            </div>
+            <div class="user-input">
+                <div class="invalid"></div>
+                <form>
+                    <div class="form-group">
+                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter username">
+                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                      <div class="form-error"></div>
+                    </div>
+                    <div class="form-group">
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                      <div class="form-error"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+            </div>
+            <div class="footer">Forget your password ?</div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Local Storage
+            localStorage.setItem("username", "robin");
+            localStorage.setItem("password", "Robin@123");
+
+            let form = $("form");
+            form.on("submit", function(event){
+                let error = false;
+
+                event.preventDefault();
+
+                let email = $(this).find('[placeholder="Enter username"]');
+                let password = $(this).find('[placeholder="Password"]');
+
+                if(!email.val()){
+                    email.siblings(".form-error").text("Please enter email.");
+                    email.css("border", "1px red solid");
+                    error = true;
+                }else {
+                    email.siblings(".form-error").text(null);
+                    email.css("border", "1px solid #ced4da")
+                }
+
+                if(!password.val()){
+                    password.siblings(".form-error").text("Please enter password.");
+                    password.css("border", "1px red solid");
+                    error = true;
+                }else {
+                    password.siblings(".form-error").text(null);
+                    password.css("border", "1px solid #ced4da")
+                }
+
+                let inputData = {
+                    email: email.val(),
+                    password: password.val()
+                }
+
+                console.log(inputData, localStorage.getItem("username"), localStorage.getItem("password"))
+
+                if (email.val() == localStorage.getItem("username") && password.val() == localStorage.getItem("password")){
+                    console.log("I am loginned")
+                    window.location.href = "/dashboard";
+                } else {
+                    $(this).siblings(".invalid").text("Invalid Username or Password")
+                }
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoM 1 cc</title>
+</head>
+<body>
+    <h1>Testing</h1>
+    <ul id="list-1">
+
+    </ul>
+
+    <div class=”parent” id="div1">
+
+    </div>
+
+<style>
+    div{
+        background-color: yellow;
+        width: 10px;
+        height: 10px;
+    }
+</style>
+    <script>
+       /*
+        // function createListItem(text){
+        //     var li = document.createElement('li');
+        //     li.textContent = text;
+        //     return li;
+        // }
+
+        // function appendChildren(parent, children){
+        //     children.forEach(function(child){
+        //          parent.appendChild(child);
+        //     });
+        // }
+
+        // var myList = document.getElementById('list-1');
+        // var items = [
+        //     createListItem('123'),
+        //     createListItem('Anay'),
+        //     createListItem('v"""v')
+
+        // ];
+        // console.log(myList)
+        // appendChildren(myList, items)
+     */   
+        
+var div1 = document.getElementById('div1');
+var newDiv = document.createElement('div');
+newDiv.style.background = 'red';
+var div2 = div1.append(newDiv)     
+   console.dir(newDiv);
+   console.dir(div2);
+
+        </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+1. Create Db 
+   createdb AttainU
+
+
+
+2. Build schema for banking application
+
+CREATE TABLE bank (id BIGSERIAL PRIMARY KEY , branch VARCHAR(50) NOT NULL, account VARCHAR(50) UNIQUE NOT NULL,
+                   customer VARCHAR(50) NOT NULL, transactions VARCHAR(50) NOT NULL UNIQUE, loan INT NOT NULL, deposit INT NOT NULL);
+id, branch,account,customer,transactions, deposit, loan,  
+
+
+3. Write SQL queries for inserting data in all of the above tables.
+
+INSERT INTO bank (branch,account,customer,transactions,loan,deposit) VALUES ('Shimla' ,'ACC009' , 'Vinay Maurya', 'TID009' , 20000 ,10000);
+
+
+
+4. Write SQL queries for returning data from all of the above tables.
+
+SELECT * FROM bank;
+
+
+
+5. Write an SQL query for returning all the customers who has an account in the
+Bangalore​ branch.
+
+SELECT * FROM bank WHERE branch = 'Bangalore';
+
+
+6. Write an SQL query that returns customers who have both savings and loan
+accounts.
+
+SELECT * FROM bank WHERE deposit > 0 AND loan > 0;
+

@@ -1,0 +1,54 @@
+body{
+    background-color: black;
+}
+.mainBody{
+    display: block;
+    width: 50%;
+    height: 100%;
+    background-image: linear-gradient(#CC95C0, #dbd4b4, #7aa1d2);
+    margin-left: 20%;
+    padding: 15px;
+}
+h1{
+    display: block;
+    position: static;
+    top: 10px;
+    text-align: center;
+    color: white;
+    /*font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+    font-family: sofia ;
+    font-size: 50px;
+    text-shadow: 3px 3px 3px black;
+    cursor: pointer;
+}
+.grid-container{
+    display: grid;
+    margin-left: 5px;
+    margin-top: 40px;
+    grid-template-columns: auto auto auto;
+    grid-gap: 20px;
+}
+.images{
+    display: inline-block;
+    border-radius: 5%;
+    width: 220px;
+    height: 220px;
+    cursor: pointer;
+    box-shadow: 3px 3px 3px brown;
+}
+
+.images:hover, h1:hover{
+    transform: scale(1.2,1.2);
+    transition-delay:100ms ;
+    
+}
+
+
+
+
+
+
+
+
+
+
